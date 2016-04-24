@@ -1,0 +1,21 @@
+{
+  "name": "es2015-base",
+  "version": "1.0.0",
+  "description": "ES2015 Base Front End Template",
+  "main": "index.js",
+  "keywords": [
+    "es2015",
+    "ECMAScript",
+    "6",
+    "javascript"
+  ],
+  "author": "Ben McPhail",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "jquery": "~2.1.4",
+    "normalize-css": "~2.1.3",
+    "bourbon": "4.2.6",
+    "neat": "~1.7.2"
+  }
+}

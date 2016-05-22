@@ -13,7 +13,6 @@ gulp.task("clean", function() {
   rimraf.sync("public/css");
   rimraf.sync("public/fonts");
   rimraf.sync("public/img");
-  rimraf.sync("public/admin");
   return rimraf.sync("public/js");
 });
 
@@ -97,7 +96,6 @@ gulp.task( "watch", ["clean", "stylesheets", "javascript", "jsconcat", "copyStat
 
   gulp.watch(["resources/assets/img/**/*.*", "resources/assets/fonts/*.*"], ["copyStatic"]);
   gulp.watch("resources/assets/js/vendor/*.js", ["jsconcat"]);
-  gulp.watch("resources/assets/admin/sass/**/*.scss", ["adminStylesheets"]);
   gulp.watch("resources/assets/sass/**/*.scss", ["stylesheets"]);
   gulp.watch("resources/assets/js/**/*.js", ["javascript"]);
 

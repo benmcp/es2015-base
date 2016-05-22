@@ -67,7 +67,7 @@ gulp.task("stylesheets", function() {
     'bower_components/neat/app/assets/stylesheets',
   ];
 
-  var out = gulp.src('js/assets/sass/main.scss')
+  var out = gulp.src('src/assets/sass/main.scss')
     //.pipe( $.sourcemaps.init() )
     .pipe( $.cssGlobbing({
       extensions: ['.css','.scss']

@@ -91,30 +91,8 @@ gulp.task("stylesheets", function() {
     .pipe( gulp.dest('public/css') )
 });
 
-// Stylesheets
-gulp.task("adminStylesheets", function() {
-  var out = gulp.src('resources/assets/admin/sass/main.scss')
-    .pipe( $.sourcemaps.init() )
-    .pipe( $.cssGlobbing({
-      extensions: ['.scss']
-    }))
-    .pipe( $.sass({
-      style: 'expanded'
-    }))
-    .on('error', $.sass.logError)
-    .pipe( $.autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    })
-  );
-
-  //out.pipe( $.csso() );
-
-  return out.pipe( gulp.dest('public/admin/css') )
-});
-
 // Livereload
-gulp.task( "watch", ["clean", "adminStylesheets", "stylesheets", "javascript", "jsconcat", "copyStatic"], function() {
+gulp.task( "watch", ["clean", "stylesheets", "javascript", "jsconcat", "copyStatic"], function() {
   $.livereload.listen();
 
   gulp.watch(["resources/assets/img/**/*.*", "resources/assets/fonts/*.*"], ["copyStatic"]);
@@ -134,7 +112,6 @@ gulp.task( "watch", ["clean", "adminStylesheets", "stylesheets", "javascript", "
 });
 
 gulp.task("default", [
-  "adminStylesheets",
   "stylesheets",
   "javascript",
   "jsconcat",
